@@ -1,0 +1,29 @@
+@use '../../../../styles.scss' as *;
+
+:host {
+  --search-bar-background: rgb(255, 168, 182);
+  --search-bar-max-width: 800px;
+  --search-bar-radius: 20px;
+  --search-bar-padding: 20px;
+  --search-bar-font-size: 20px;
+  --search-bar-border: 0;
+}
+
+.search-bar {
+  @include flex-center;
+  width: 100%;
+
+  input {
+    max-width: var(--search-bar-max-width);
+    width: 100%;
+    background-color: var(--search-bar-background);
+    border: var(--search-bar-border);
+    border-radius: var(--search-bar-radius);
+    padding: var(--search-bar-padding);
+    font-size: var(--search-bar-font-size);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
