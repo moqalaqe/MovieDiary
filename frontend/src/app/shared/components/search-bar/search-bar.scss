@@ -1,12 +1,13 @@
 @use '../../../../styles.scss' as *;
 
 :host {
-  --search-bar-background: rgb(255, 168, 182);
+  --search-bar-background: #2a2f38;
   --search-bar-max-width: 800px;
-  --search-bar-radius: 20px;
+  --search-bar-radius: 50px;
   --search-bar-padding: 20px;
   --search-bar-font-size: 20px;
   --search-bar-border: 0;
+  --search-bar-outline-color: #8f7d5c;
 }
 
 .search-bar {
@@ -21,9 +22,12 @@
     border-radius: var(--search-bar-radius);
     padding: var(--search-bar-padding);
     font-size: var(--search-bar-font-size);
+    outline-offset: 0;
+    color: white;
+    caret-color: white;
 
     &:focus {
-      outline: none;
+      outline: 2px solid var(--search-bar-outline-color);
     }
   }
 }
