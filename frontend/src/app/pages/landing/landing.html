@@ -1,6 +1,10 @@
 <div class="landing">
-  <app-search-bar (onSearch)="onSearch($event)" />
-  @if (searchResult().length) {
-    <app-search-dropdown [dropDownData]="searchResult()" />
-  }
+  <div class="landing__search">
+    <app-search-bar (onSearch)="onSearch($event)" />
+    @if (searchResult().length) {
+      <div class="landing__search-dropdown">
+        <app-search-dropdown [dropDownData]="searchResult()" />
+      </div>
+    }
+  </div>
 </div>

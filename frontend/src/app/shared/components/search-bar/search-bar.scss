@@ -12,10 +12,9 @@
 
 .search-bar {
   @include flex-center;
-  width: 100%;
+  width: var(--search-bar-max-width);
 
   input {
-    max-width: var(--search-bar-max-width);
     width: 100%;
     background-color: var(--search-bar-background);
     border: var(--search-bar-border);
@@ -23,7 +22,6 @@
     padding: var(--search-bar-padding);
     font-size: var(--search-bar-font-size);
     outline-offset: 0;
-    color: white;
     caret-color: white;
 
     &:focus {

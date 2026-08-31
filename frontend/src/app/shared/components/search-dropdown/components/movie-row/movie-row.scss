@@ -1,0 +1,38 @@
+:host {
+  /* Layout variables */
+  --movie-row-padding: 20px;
+  --movie-row-gap: 20px;
+
+  /* Color variables */
+  --movie-row-bg: #27262c;
+  --movie-row-bg-hover: #3e3f45;
+
+  /* Image dimensions */
+  --movie-row-img-width: 50px;
+  --movie-row-img-height: 70px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--movie-row-padding);
+  background-color: var(--movie-row-bg);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--movie-row-bg-hover);
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: var(--movie-row-gap);
+
+    img {
+      width: var(--movie-row-img-width);
+      height: var(--movie-row-img-height);
+    }
+  }
+}

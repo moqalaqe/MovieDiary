@@ -3,10 +3,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.custom-scrollbar {
+  width: 0.5rem !important;
+  right: -0.7rem !important;
 }

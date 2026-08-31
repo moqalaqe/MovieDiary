@@ -1,13 +1,7 @@
 <div class="search-dropdown">
-  @for (item of dropDownData(); track $index) {
-    <div class="search-dropdown__item">
-      <div class="search-dropdown__item-right">
-        <img [src]="item.Poster" alt="#" />
-        <p>{{ item.Title }}</p>
-      </div>
-      <p>
-        Year: <span>{{ item.Year }}</span>
-      </p>
-    </div>
-  }
+  <om-scrollbar styleClass="custom-scrollbar">
+    @for (movie of dropDownData(); track $index) {
+      <app-movie-row [movieRowData]="movie" />
+    }
+  </om-scrollbar>
 </div>
