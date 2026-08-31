@@ -22,7 +22,7 @@ export class SearchMovie {
     return this.http.get<MovieSearchResponse>(this.SEARCH_API, { params });
   }
 
-  public fetchMovieDetails(imdbID: string): any {
+  public fetchMovieDetails(imdbID: string): Observable<Movie> {
     const params = new HttpParams().set('apikey', this.API_KEY).set('i', imdbID);
 
     return this.http.get<Movie>(this.SEARCH_API, { params });
