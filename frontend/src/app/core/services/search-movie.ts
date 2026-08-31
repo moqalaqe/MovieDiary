@@ -27,4 +27,19 @@ export class SearchMovie {
 
     return this.http.get<Movie>(this.SEARCH_API, { params });
   }
+  private fanartApiKey = 'fe6496f4d9d460e806fb900052fc4272';
+  private fanartBaseUrl = 'https://webservice.fanart.tv/v3/movies';
+
+  public getMovieBackground(imdbId: string): Observable<string> {
+    const url = `${this.fanartBaseUrl}/${imdbId}?api_key=${this.fanartApiKey}`;
+
+    return this.http.get<any>(url).pipe(
+      map((response) => {
+        if (response.moviebackground && response.moviebackground.length > 0) {
+          return response.moviebackground[0].url;
+        }
+        return 'assets/images/default-backdrop.jpg';
+      }),
+    );
+  }
 }
