@@ -1,0 +1,59 @@
+:host {
+  --btn-gradient-start: #48a6e8;
+  --btn-gradient-end: #4fcae2;
+  --btn-glow: rgba(20, 156, 180, 0.829);
+  --btn-padding: 15px 0;
+  --btn-box-shadow: 0 4px 15px var(--btn-glow);
+
+  --comment-padding: 20px;
+  --comment-bg-color: #28282d;
+
+  --text-area-bg-color: #212227;
+  --text-area-padding: 10px;
+  --text-area-margin: 12px 0;
+
+  --radius-10: 10px;
+  --border: 1px solid #45454d;
+}
+
+.comment {
+  padding: var(--comment-padding);
+  border-radius: var(--radius-10);
+  background-color: var(--comment-bg-color);
+  border: var(--border);
+
+  textarea,
+  button {
+    width: 100%;
+    border-radius: var(--radius-10);
+  }
+
+  textarea {
+    padding: var(--text-area-padding);
+    margin: var(--text-area-margin);
+    background: var(--text-area-bg-color);
+    border: var(--border);
+    resize: none;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  button {
+    padding: var(--btn-padding);
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(90deg, var(--btn-gradient-start), var(--btn-gradient-end));
+    transition:
+      box-shadow 0.3s,
+      transform 0.2s;
+
+    &:hover {
+      box-shadow: var(--btn-box-shadow);
+      transform: translateY(-2px);
+    }
+  }
+}

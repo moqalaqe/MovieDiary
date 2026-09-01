@@ -16,3 +16,18 @@
   width: 0.5rem !important;
   right: -0.7rem !important;
 }
+
+/* Apply Inter as the default font for the whole app */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Apply Montserrat strictly for large headers and titles */
+h1,
+h2,
+h3,
+.movie-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}

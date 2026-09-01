@@ -1,8 +1,9 @@
 import { Component, effect, input } from '@angular/core';
+import { PersonalComment } from './personal-comment/personal-comment';
 
 @Component({
   selector: 'app-details-card',
-  imports: [],
+  imports: [PersonalComment],
   templateUrl: './details-card.html',
   styleUrl: './details-card.scss',
 })

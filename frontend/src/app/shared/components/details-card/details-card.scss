@@ -1,18 +1,52 @@
-.card {
-  display: flex;
-  gap: 20px;
-  background: transparent;
-  height: 500px;
-  width: 80%;
-  margin: 0 auto;
+:host {
+  --max-w: 800px;
+  --poster-max-h: 380px;
+  --radius: 10px;
 
-  &__left {
+  --gap-lg: 30px;
+  --gap-md: 12px;
+  --gap-sm: 5px;
+
+  --font-sm: 12px;
+  --color-text: #d7d7d7;
+
+  --icon-size: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: var(--max-w);
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-lg);
+
+  &__poster {
     flex: 1;
-    img {
-      height: 100%;
-    }
+    max-height: var(--poster-max-h);
+    border-radius: var(--radius);
   }
 
-  &__right {
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+
+    &-plot {
+      font-size: var(--font-sm);
+      color: var(--color-text);
+      line-height: 20px;
+    }
+
+    &-rating {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-sm);
+      color: var(--color-text);
+
+      img {
+        width: var(--icon-size);
+        height: var(--icon-size);
+      }
+    }
   }
 }
