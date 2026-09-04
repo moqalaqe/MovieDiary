@@ -1,0 +1,12 @@
+<swiper-container
+  [attr.loop]="true"
+  [attr.slides-per-view]="3"
+  [attr.space-between]="10"
+  navigation="true"
+>
+  @for (item of carouselItemsData(); track $index) {
+    <swiper-slide>
+      <ng-container *ngComponentOutlet="carouselItemComponent(); inputs: item"> </ng-container>
+    </swiper-slide>
+  }
+</swiper-container>

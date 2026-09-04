@@ -1,3 +1,5 @@
+@use '../../../styles.scss' as *;
+
 .landing {
   height: 100dvh;
   background-color: #191a1b;
@@ -6,14 +8,20 @@
   &__search {
     position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
 
     &-dropdown {
       position: absolute;
       top: 80px;
       width: 800px;
+    }
+  }
+
+  &__lists {
+    margin-top: 50px;
+    p {
+      margin-bottom: 20px;
+      padding-left: 5px;
     }
   }
 }

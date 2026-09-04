@@ -1,0 +1,30 @@
+@use '../../../../../styles.scss' as *;
+
+:host {
+  --card-hover-border-color: #48a6e8;
+  --card-box-shadow: 0 0px 10px var(--btn-glow);
+  --card-border-color: #5e5e61;
+  --card-radius: 10px;
+  --card-width: 200px;
+  --card-height: 140px;
+}
+
+.collection-card {
+  @include flex-center;
+  width: var(--card-width);
+  height: var(--card-height);
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--card-radius);
+  cursor: pointer;
+
+  background-image: url('../../../../../assets/list-bg-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: var(--card-box-shadow);
+    border-color: var(--card-hover-border-color);
+  }
+}
