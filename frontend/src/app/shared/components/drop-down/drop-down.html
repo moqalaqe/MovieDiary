@@ -1,0 +1,21 @@
+<div class="drop-down">
+  <button (click)="toggleDropDown()">
+    @if (dropDownConfig().iconUrl) {
+      <img [src]="dropDownConfig().iconUrl" alt="" />
+    }
+    <span>{{ dropDownConfig().label }}</span>
+    <span>{{ selectedValue() }}</span>
+  </button>
+
+  @if (isOpened()) {
+    <div class="drop-down__options">
+      <om-scrollbar styleClass="custom-scrollbar">
+        @for (option of this.dropDownConfig().values; track $index) {
+          <div (click)="selectValue(option)">
+            {{ option }}
+          </div>
+        }
+      </om-scrollbar>
+    </div>
+  }
+</div>

@@ -3,6 +3,7 @@
   <div class="card__description">
     <h1>{{ movieDetails().Title }} ({{ movieDetails().Year }})</h1>
     <p class="card__description-plot">{{ movieDetails().Plot }}</p>
+    <app-drop-down [dropDownConfig]="myRating" />
     <p class="card__description-rating">
       <img src="assets/star.svg" alt="" />
       IMDB Rating: {{ movieDetails().imdbRating }}

@@ -1,7 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchMovie } from '../../core/services/search-movie';
-import { NgStyle } from '../../../../node_modules/@angular/common/types/_common_module-chunk';
 import { DetailsCard } from '../../shared/components/details-card/details-card';
 
 @Component({

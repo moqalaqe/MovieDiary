@@ -1,0 +1,69 @@
+:host {
+  /* --- Component Variables --- */
+  --dropdown-bg: #28282d;
+  --dropdown-bg-hover: #3e3f45;
+  --dropdown-border-radius: 10px;
+  --dropdown-gap: 4px;
+
+  /* Button specific */
+  --dropdown-btn-padding: 10px 20px;
+  --dropdown-icon-size: 20px;
+  --dropdown-text-color: #d7d7d7;
+
+  /* Menu specific */
+  --dropdown-menu-height: 150px;
+  --dropdown-menu-offset: 43px; /* Matches the button's height to sit right below it */
+  --dropdown-option-padding: 10px;
+  --dropdown-font-size: 14px;
+
+  /* --- Host Styles --- */
+  align-self: flex-start;
+}
+
+.drop-down {
+  position: relative;
+
+  button {
+    background-color: var(--dropdown-bg);
+    padding: var(--dropdown-btn-padding);
+    border-radius: var(--dropdown-border-radius);
+    gap: var(--dropdown-gap);
+    outline: none;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+
+    span {
+      color: var(--dropdown-text-color);
+    }
+
+    &:hover {
+      background-color: var(--dropdown-bg-hover);
+    }
+
+    img {
+      width: var(--dropdown-icon-size);
+      height: var(--dropdown-icon-size);
+    }
+  }
+
+  &__options {
+    position: absolute;
+    height: var(--dropdown-menu-height);
+    width: 100%;
+    background-color: var(--dropdown-bg);
+    border-radius: var(--dropdown-border-radius);
+    top: var(--dropdown-menu-offset);
+
+    div {
+      font-size: var(--dropdown-font-size);
+      padding: var(--dropdown-option-padding);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--dropdown-bg-hover);
+      }
+    }
+  }
+}
