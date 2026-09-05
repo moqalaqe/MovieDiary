@@ -1,13 +1,14 @@
 <div class="card">
   <img class="card__poster" [src]="movieDetails().Poster" alt="###" />
+
   <div class="card__description">
     <h1>{{ movieDetails().Title }} ({{ movieDetails().Year }})</h1>
     <p class="card__description-plot">{{ movieDetails().Plot }}</p>
-    <app-drop-down [dropDownConfig]="myRating" />
-    <p class="card__description-rating">
-      <img src="assets/star.svg" alt="" />
-      IMDB Rating: {{ movieDetails().imdbRating }}
-    </p>
-    <app-personal-comment />
+
+    <app-save-details
+      [imdbRating]="movieDetails().imdbRating"
+      (detailsChange)="onDetailsChange($event)"
+    />
+    <app-personal-comment (save)="onSave($event)" />
   </div>
 </div>

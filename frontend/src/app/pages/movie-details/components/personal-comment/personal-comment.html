@@ -1,0 +1,11 @@
+<div class="comment">
+  <p>Personal Comments</p>
+  <textarea
+    #commentInput
+    rows="6"
+    placeholder="Write your comments here"
+    [value]="comment()"
+    (input)="comment.set(commentInput.value)"
+  ></textarea>
+  <button (click)="saveComment()">SAVE COMMENT</button>
+</div>

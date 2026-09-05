@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchMovie } from '../../core/services/search-movie';
-import { DetailsCard } from '../../shared/components/details-card/details-card';
+import { DetailsCard } from './components/details-card/details-card';
 
 @Component({
   selector: 'app-movie-details',

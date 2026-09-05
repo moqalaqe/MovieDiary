@@ -1,0 +1,16 @@
+.save-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}

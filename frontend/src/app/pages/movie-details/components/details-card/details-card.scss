@@ -36,17 +36,5 @@
       color: var(--color-text);
       line-height: 20px;
     }
-
-    &-rating {
-      display: flex;
-      align-items: center;
-      gap: var(--gap-sm);
-      color: var(--color-text);
-
-      img {
-        width: var(--icon-size);
-        height: var(--icon-size);
-      }
-    }
   }
 }

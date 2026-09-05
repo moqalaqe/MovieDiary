@@ -1,0 +1,10 @@
+<div class="save-details">
+  <div>
+    <img src="assets/star.svg" alt="" />
+    <p>IMDB Rating: {{ imdbRating() }}</p>
+  </div>
+  <div>
+    <app-drop-down (onSelect)="this.selectedRating.set($event)" [dropDownConfig]="myRating" />
+    <app-drop-down (onSelect)="this.selectedList.set($event)" [dropDownConfig]="myLists" />
+  </div>
+</div>

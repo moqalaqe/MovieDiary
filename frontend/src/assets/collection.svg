@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Back rectangle -->
+  <rect x="46" y="10" width="42" height="54" rx="10" fill="#424242" stroke="#fbbf24" stroke-width="6" stroke-linejoin="round"/>
+  
+  <!-- Middle rectangle -->
+  <rect x="29" y="23" width="42" height="54" rx="10" fill="#424242" stroke="#fbbf24" stroke-width="6" stroke-linejoin="round"/>
+  
+  <!-- Front rectangle -->
+  <rect x="12" y="36" width="42" height="54" rx="10" fill="#424242" stroke="#fbbf24" stroke-width="6" stroke-linejoin="round"/>
+</svg>
