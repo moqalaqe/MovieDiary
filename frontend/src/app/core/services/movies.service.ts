@@ -6,9 +6,11 @@ import { Movie, MovieSearchResponse } from '../models/movie.model';
 @Injectable({
   providedIn: 'root',
 })
-export class SearchMovie {
+export class MovieService {
   private readonly SEARCH_API = 'https://www.omdbapi.com/';
   private readonly API_KEY = '841a7f49';
+  private readonly fanartApiKey = 'fe6496f4d9d460e806fb900052fc4272';
+  private readonly fanartBaseUrl = 'https://webservice.fanart.tv/v3/movies';
 
   private readonly http = inject(HttpClient);
 
@@ -27,8 +29,6 @@ export class SearchMovie {
 
     return this.http.get<Movie>(this.SEARCH_API, { params });
   }
-  private fanartApiKey = 'fe6496f4d9d460e806fb900052fc4272';
-  private fanartBaseUrl = 'https://webservice.fanart.tv/v3/movies';
 
   public getMovieBackground(imdbId: string): Observable<string> {
     const url = `${this.fanartBaseUrl}/${imdbId}?api_key=${this.fanartApiKey}`;
@@ -41,5 +41,9 @@ export class SearchMovie {
         return 'assets/images/default-backdrop.jpg';
       }),
     );
+  }
+
+  public saveMovie(value: any): void {
+    console.log(value);
   }
 }

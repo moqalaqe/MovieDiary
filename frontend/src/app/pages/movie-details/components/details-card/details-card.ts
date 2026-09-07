@@ -1,10 +1,8 @@
 import { Component, effect, inject, input, output, signal } from '@angular/core';
 import { PersonalComment } from '../personal-comment/personal-comment';
-import { DropDown } from '../../../../shared/components/drop-down/drop-down';
-import { DropDownConfig } from '../../../../core/models/drop-down.model';
-import { MovieDetails } from '../../movie-details';
 import { SaveDetails } from '../save-details/save-details';
-import { SaveMovie } from '../../../../core/services/save-movie';
+import { IMovieDetails } from '../../../../core/models/movie.model';
+import { MovieService } from '../../../../core/services/movies.service';
 
 @Component({
   selector: 'app-details-card',
@@ -13,9 +11,9 @@ import { SaveMovie } from '../../../../core/services/save-movie';
   styleUrl: './details-card.scss',
 })
 export class DetailsCard {
-  public readonly movieDetails = input.required<any>();
+  public readonly movieDetails = input.required<IMovieDetails>();
 
-  private readonly saveMovieService = inject(SaveMovie);
+  private readonly movieService = inject(MovieService);
 
   public details = signal<any>({});
   public personalComment = signal<string>('');
@@ -32,6 +30,6 @@ export class DetailsCard {
       ...this.details(),
     };
 
-    this.saveMovieService.saveMovie(value);
+    this.movieService.saveMovie(value);
   }
 }

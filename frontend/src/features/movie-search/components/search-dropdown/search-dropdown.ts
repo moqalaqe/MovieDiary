@@ -1,7 +1,7 @@
-import { Component, effect, input } from '@angular/core';
-import { Movie } from '../../../core/models/movie.model';
-import { MovieRow } from './components/movie-row/movie-row';
+import { Component, input } from '@angular/core';
+import { MovieRow } from '../movie-row/movie-row';
 import { NgxScrollbarComponent } from '@omnedia/ngx-scrollbar';
+import { Movie } from '../../../../app/core/models/movie.model';
 
 @Component({
   selector: 'app-search-dropdown',

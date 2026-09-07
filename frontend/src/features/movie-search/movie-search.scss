@@ -1,0 +1,12 @@
+.movie-search {
+  position: relative;
+  width: 100%;
+  @include flex-center;
+
+  &-dropdown {
+    position: absolute;
+    top: 80px;
+    width: 800px;
+    z-index: 10;
+  }
+}

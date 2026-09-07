@@ -11,3 +11,12 @@ export interface Movie {
   Type: string;
   Poster: string;
 }
+
+export interface IMovieDetails extends Movie {
+  Plot: string;
+  imdbRating: string;
+  Director: string;
+  Actors: string;
+  Genre: string;
+  Runtime: string;
+}

@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SearchMovie } from '../../core/services/search-movie';
+import { SearchMovie } from '../../core/services/movies.service';
 import { DetailsCard } from './components/details-card/details-card';
 
 @Component({

@@ -1,12 +1,5 @@
 <div class="landing">
-  <div class="landing__search">
-    <app-search-bar (onSearch)="onSearch($event)" />
-    @if (searchResult().length) {
-      <div class="landing__search-dropdown">
-        <app-search-dropdown [dropDownData]="searchResult()" />
-      </div>
-    }
-  </div>
+  <app-movie-search />
   <div class="landing__lists">
     <p>My Lists</p>
     <app-carousel [carouselItemComponent]="CollectionCard" [carouselItemsData]="listTitles()" />

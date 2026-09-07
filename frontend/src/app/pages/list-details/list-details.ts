@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { SearchDropdown } from '../../shared/components/search-dropdown/search-dropdown';
+import { SearchDropdown } from '../../../features/movie-search/components/search-dropdown/search-dropdown';
 
 @Component({
   selector: 'app-list-details',
