@@ -1,8 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
-import { SearchBar } from '../../app/shared/components/search-bar/search-bar';
+import { SearchBar } from '../../shared/components/search-bar/search-bar';
 import { SearchDropdown } from './components/search-dropdown/search-dropdown';
-import { Movie } from '../../app/core/models/movie.model';
-import { MovieService } from '../../app/core/services/movies.service';
+import { Movie } from '../../core/models/movie.model';
+import { MovieService } from '../../core/services/movies.service';
 
 @Component({
   selector: 'app-movie-search',

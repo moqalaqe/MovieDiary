@@ -3,7 +3,7 @@ import { MovieService } from '../../core/services/movies.service';
 import { Movie } from '../../core/models/movie.model';
 import { Carousel } from '../../shared/components/carousel/carousel';
 import { CollectionCard } from './components/collection-card/collection-card';
-import { MovieSearch } from '../../../features/movie-search/movie-search';
+import { MovieSearch } from '../../features/movie-search/movie-search';
 
 @Component({
   selector: 'app-landing',
