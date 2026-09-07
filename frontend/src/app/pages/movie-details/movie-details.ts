@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SearchMovie } from '../../core/services/movies.service';
+import { MovieService } from '../../core/services/movies.service';
 import { DetailsCard } from './components/details-card/details-card';
 
 @Component({
@@ -11,7 +11,7 @@ import { DetailsCard } from './components/details-card/details-card';
 })
 export class MovieDetails implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
-  private readonly searchMovieService = inject(SearchMovie);
+  private readonly movieService = inject(MovieService);
 
   private imdbID = signal<string>('');
   private bgrImg = signal<string>('');
@@ -19,12 +19,10 @@ export class MovieDetails implements OnInit {
 
   public ngOnInit(): void {
     this.imdbID.set(this.activatedRoute.snapshot.paramMap.get('id')!);
-    this.searchMovieService
+    this.movieService
       .fetchMovieDetails(this.imdbID())
       .subscribe((res) => this.movieDetails.set(res));
-    this.searchMovieService
-      .getMovieBackground(this.imdbID())
-      .subscribe((res) => this.bgrImg.set(res));
+    this.movieService.getMovieBackground(this.imdbID()).subscribe((res) => this.bgrImg.set(res));
   }
 
   public get backgroundImage(): string {

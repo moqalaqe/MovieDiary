@@ -2,15 +2,16 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { forkJoin, from, map, Observable, switchMap, tap } from 'rxjs';
 import { Movie, MovieSearchResponse } from '../models/movie.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MovieService {
-  private readonly SEARCH_API = 'https://www.omdbapi.com/';
-  private readonly API_KEY = '841a7f49';
-  private readonly fanartApiKey = 'fe6496f4d9d460e806fb900052fc4272';
-  private readonly fanartBaseUrl = 'https://webservice.fanart.tv/v3/movies';
+  private readonly SEARCH_API = environment.SEARCH_MOVIE_API;
+  private readonly API_KEY = environment.SEARCH_MOVIE_API_KEY;
+  private readonly fanartApiKey = environment.FAN_ART_API_KEY;
+  private readonly fanartBaseUrl = environment.FAN_ART_API;
 
   private readonly http = inject(HttpClient);
 
