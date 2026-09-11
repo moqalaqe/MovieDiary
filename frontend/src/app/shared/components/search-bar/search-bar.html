@@ -1,3 +1,4 @@
 <div class="search-bar">
-  <input type="text" [formControl]="searchControl" placeholder="Search movies..." />
+  <img (click)="searchInput.focus()" src="./assets/search-icon.svg" alt="" />
+  <input type="text" #searchInput [formControl]="searchControl" placeholder="Search movies..." />
 </div>

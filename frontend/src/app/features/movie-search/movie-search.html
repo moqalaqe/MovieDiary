@@ -1,7 +1,8 @@
 <div class="movie-search">
   <app-search-bar (onSearch)="onSearch($event)" />
+
   @if (searchResult().length) {
-    <div class="landing__search-dropdown">
+    <div class="movie-search__dropdown">
       <app-search-dropdown [dropDownData]="searchResult()" />
     </div>
   }

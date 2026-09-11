@@ -1,31 +1,50 @@
 @use '../../../../styles.scss' as *;
 
 :host {
-  --search-bar-background: #2a2f38;
   --search-bar-max-width: 800px;
   --search-bar-radius: 50px;
-  --search-bar-padding: 20px;
+  --search-bar-padding: 10px 20px;
+
+  --search-bar-background: #2a2f38;
+  --search-bar-outline: 2px solid #8f7d5c;
+
+  --input-height: 40px;
+  --icon-size: 40px;
   --search-bar-font-size: 20px;
-  --search-bar-border: 0;
-  --search-bar-outline-color: #8f7d5c;
+
+  --icon-input-gap: 10px;
 }
 
 .search-bar {
   @include flex-center;
   width: var(--search-bar-max-width);
+  background-color: var(--search-bar-background);
+  border-radius: var(--search-bar-radius);
+  padding: var(--search-bar-padding);
+  border: 0;
+
+  img {
+    margin-right: var(--icon-input-gap);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    cursor: pointer;
+  }
 
   input {
     width: 100%;
+    height: var(--input-height);
     background-color: var(--search-bar-background);
-    border: var(--search-bar-border);
-    border-radius: var(--search-bar-radius);
-    padding: var(--search-bar-padding);
     font-size: var(--search-bar-font-size);
+    border: 0;
     outline-offset: 0;
     caret-color: white;
 
     &:focus {
-      outline: 2px solid var(--search-bar-outline-color);
+      outline: none;
     }
+  }
+
+  &:focus-within {
+    outline: var(--search-bar-outline);
   }
 }
